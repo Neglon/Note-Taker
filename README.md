@@ -11,6 +11,7 @@
 [Git Hub Repo](https://github.com/Neglon/Note-Taker)
 
 ## Usage
+[Note Taker Live on Heroku](https://neglon-note-taker-1df45a11ee24.herokuapp.com/)
     Go to the heroku server link. Once there you will see the note taker web page, click on get started to be brought to the notes page. On the right side of the page there is an entry field for note title and not text. Fill out both spots to get the save note button to appear in header on the top right. Click save note to save the note in the left window of the page. Subsequently you can click the clear form button that appears as you begin typing to clear the entry fields. When multiple notes are saved, you can click on the notes to bring up all of the typed info in the right window. You can also use the red trash can button to delete a note from the list.
    
 
