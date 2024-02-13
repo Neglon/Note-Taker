@@ -1,7 +1,22 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text",
+        "title": "Test Title",
+        "text": "Test text",
         "id": "1"
+    },
+    {
+        "title": "Eat ",
+        "text": "Lunchtime",
+        "id": "8a8f"
+    },
+    {
+        "title": "hi lauren",
+        "text": "noon",
+        "id": "88cf"
+    },
+    {
+        "title": "finish project",
+        "text": "learn how to delete notes\n",
+        "id": "4758"
     }
 ]
