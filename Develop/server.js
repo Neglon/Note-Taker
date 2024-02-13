@@ -6,8 +6,8 @@ const fs = require('fs');
 //variable for when an api route is called
 const api = require('./routes/index');
 
-//variable for the port number
-const PORT = 3001;
+//variable for the heroku port or the local port
+const PORT = process.env.PORT || 3001;
 
 //variable for the express function
 const app = express();
