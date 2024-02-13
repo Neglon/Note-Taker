@@ -1,3 +1,4 @@
+// variables for the express router and uuid packages
 const notes = require('express').Router();
 const uuid = require('../helpers/uuid');
 
@@ -14,8 +15,10 @@ notes.get('/', (req, res) => {
 notes.post('/', (req, res) => {
   console.info(`${req.method} request received to add a note`);
 
+  // Destructuring for the items in req.body
   const { title, text } = req.body;
 
+  // If all the required properties are present in the request body then create a new note
   if (req.body) {
     const newNote = {
       title,
@@ -23,6 +26,7 @@ notes.post('/', (req, res) => {
       id: uuid(),
     };
 
+    // Use the helper function to append the new note to the db.json file
     readAndAppend(newNote, './db/db.json');
     res.json(`Note added successfully`);
   } else {
@@ -30,4 +34,19 @@ notes.post('/', (req, res) => {
   }
 });
 
+notes.delete('/:id', (req, res) => {
+  const noteId = req.params.id;
+
+  readFromFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((data) => {
+      // Result holds the array, that gets filtered to essentially remove the note that does not have matching ids as it iterates through the array
+      const result = data.filter((note) => note.id !== noteId);
+
+      writeToFile('./db/db.json', result);
+
+      res.json(`Note with ${noteId} has been succesfully deleted`);
+    });
+
+});
 module.exports = notes;
